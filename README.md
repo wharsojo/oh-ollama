@@ -3,6 +3,11 @@ oh ollama is good!
 
 ## Dockerfile
 ```bash
+mkdir ~/conda-envs
+
+docker pull chromadb/chroma
+docker run -p 8000:8000 chromadb/chroma
+
 docker build -t code-server .
 ```
 ```bash
@@ -13,16 +18,17 @@ docker run -dit --init \
   -e PUID=1000 \
   -e PGID=1000 \
   -p 8843:3000 \
-  -v "$HOME/Projects:/home/workspace/Projects:cached" \
   -v "$HOME/.ssh:/home/workspace/.ssh:cached" \
+  -v "$HOME/Projects:/home/workspace/Projects:cached" \
+  -v "$HOME/conda-envs:/home/workspace/miniconda3/envs:cached" \
+  -v "$HOME/vectordb-stores:/home/workspace/vectordb-stores:cached" \
   code-server /usr/bin/zsh
 ```
 * Go: http://localhost:8843/?folder=/home/workspace
 * Open integrated terminal
-* run
+* open new terminal
 ```bash
-conda create --name widi --clone base
-conda activate widi
+conda create --name widi --clone base && conda activate widi
 
 cd ~/Projects/videoprojects/2024-04-04-build-rag-with-python
 pip install -r requirements.txt
