@@ -17,3 +17,9 @@ docker run -dit --init \
   -v "$HOME/.ssh:/home/workspace/.ssh:cached" \
   code-server /usr/bin/zsh
 ```
+* Go: http://localhost:8843/?folder=/home/workspace
+* Open integrated terminal
+* run
+```bash
+conda create --name widi --clone base
+```
