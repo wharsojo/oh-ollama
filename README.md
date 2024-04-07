@@ -3,7 +3,7 @@ oh ollama is good!
 
 ## Dockerfile
 ```bash
-   docker build -t code-server .
+docker build -t code-server .
 ```
 ```bash
 docker run -dit --init \
