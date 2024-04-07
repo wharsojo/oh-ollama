@@ -1,6 +1,6 @@
 FROM gitpod/openvscode-server
 RUN sudo apt update
-RUN sudo apt install curl zsh git python3-dev build-essential openssh-client -y 
+RUN sudo apt install curl zsh git lsof net-tools python3-dev build-essential openssh-client libmagic-dev -y 
 RUN sudo chsh -s $(which zsh) $(whoami)
 RUN mkdir -p ~/.ssh
 RUN mkdir -p ~/Projects
@@ -11,3 +11,4 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -
     && rm ~/miniconda3.sh
 RUN ~/miniconda3/bin/conda update conda -y
 RUN ~/miniconda3/bin/conda init zsh 
+ENV PATH ~/miniconda3/bin:$PATH
