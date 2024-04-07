@@ -3,6 +3,9 @@ oh ollama is good!
 
 ## Dockerfile
 ```bash
+   docker build -t code-server .
+```
+```bash
 docker run -dit --init \
   --name=code-server \
   --restart unless-stopped \
@@ -13,4 +16,4 @@ docker run -dit --init \
   -v "$HOME/Projects:/home/workspace/Projects:cached" \
   -v "$HOME/.ssh:/home/workspace/.ssh:cached" \
   code-server /usr/bin/zsh
-  ```
+```
