@@ -22,4 +22,8 @@ docker run -dit --init \
 * run
 ```bash
 conda create --name widi --clone base
+conda activate widi
+
+cd ~/Projects/videoprojects/2024-04-04-build-rag-with-python
+pip install -r requirements.txt
 ```
