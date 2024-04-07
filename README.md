@@ -2,13 +2,16 @@
 oh ollama is good!
 
 ## Dockerfile
+* open Ubuntu WSL
 ```bash
+git clone https://github.com/wharsojo/oh-ollama.git
+cd oh-ollama
+docker build -t code-server .
+
 mkdir ~/conda-envs
 
 docker pull chromadb/chroma
 docker run -p 8000:8000 chromadb/chroma
-
-docker build -t code-server .
 ```
 ```bash
 docker run -dit --init \
